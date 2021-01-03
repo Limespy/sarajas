@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import yaml
 from . import texttools
-from . import boot 
+from . import boot
 #───────────────────────────────────────────────────────────────────────
 def dump_boot(path):
     key = "main_program"
