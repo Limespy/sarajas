@@ -1,0 +1,6 @@
+__pycache__
+*.pyc
+*.o
+.cache
+*.vscode
+*password.py
