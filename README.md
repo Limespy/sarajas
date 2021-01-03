@@ -1,5 +1,27 @@
 # Æther database
 
+- [Æther database](#æther-database)
+  - [Fundamentals](#fundamentals)
+    - [Aim](#aim)
+    - [Meditations](#meditations)
+    - [Philosophies](#philosophies)
+      - [Logic separate from implementation](#logic-separate-from-implementation)
+      - [Maximum freedom](#maximum-freedom)
+      - [Version control](#version-control)
+      - [](#)
+    - [Doctrines](#doctrines)
+      - [Everything is item](#everything-is-item)
+  - [Design](#design)
+    - [Security](#security)
+    - [Item files](#item-files)
+    - [Version control](#version-control-1)
+    - [Indexes](#indexes)
+  - [Implementation](#implementation)
+    - [Item storage](#item-storage)
+    - [Program language](#program-language)
+    - [Booting](#booting)
+    - [Version control](#version-control-2)
+
 ## Meta
 
 ## Fundamentals
