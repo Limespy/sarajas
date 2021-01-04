@@ -4,15 +4,14 @@ import sys
 import yaml
 import meta
 #───────────────────────────────────────────────────────────────────────
-if "dump" in sys.argv:
-    meta.contructor.dump_boot(meta.path_0)
+if "generate" in sys.argv:
+    meta.contructor.generate_boot(meta.path_0)
 
 if "load" in sys.argv:
     with open(meta.path_0, 'r+') as file:
         item = yaml.load(file, Loader=yaml.Loader)
 
-if "launchDB" in sys.argv:
-    print("derp")
+if "boot" in sys.argv:
     import database
     database.boot(sys.argv)
 
