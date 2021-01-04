@@ -4,9 +4,9 @@ import yaml
 from . import texttools
 from . import boot
 #───────────────────────────────────────────────────────────────────────
-def dump_boot(path):
-    key = "main_program"
-    value_type = "python"
+def generate_boot(path):
+    key = "program"
+    value_type = "python_source"
     value = boot.core_as_string
     item = {key: (value_type, value)}
     with open(path, 'w+') as file:

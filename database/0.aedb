@@ -1,5 +1,5 @@
-main_program: !!python/tuple
-- python
+program: !!python/tuple
+- python_source
 - '#!/usr/bin/python3
 
   # -*- coding: utf-8 -*-
@@ -12,4 +12,28 @@ main_program: !!python/tuple
 
   print(path_DB)
 
-  print(("Metaprogramming", argv[1]))'
+  print(("Metaprogramming", argv[1]))
+
+
+  intro = """
+
+  Hello there!
+
+  The database has been booted, but it is not yet functional."""
+
+  print(intro)
+
+
+  inputprompt = """
+
+  To show some interactivity from the database,
+
+  please provide something to echo:  """
+
+
+  response = input(inputprompt)
+
+  print("Echo: %s" % str(response))
+
+
+  '
