@@ -2,22 +2,22 @@
 # -*- coding: utf-8 -*-
 """
 -
-         /AWAMMMMM │ database
-        /AWMM      │ 
-       /AW MM      │ The core system
-      /AW  MM      │ 
-     /AW   MMMMMMM │ 
-    /AW    MM      │ 
-   /AWMMMMMMM      │ 
-  /AW      MM      │ 
- /AW       MMMMMMM │ 
+         AWAMMMMM │ database
+        AWMM      │ 
+       AW MM      │ The core system
+      AW  MM      │ 
+     AW   MMMMMMM │ 
+    AW    MM      │ 
+   AWMMMMMMM      │ 
+  AW      MM      │ 
+ AW       MMMMMMM │ 
 """
 import yaml
 import pathlib
-path_file = pathlib.Path(__file__).parent.absolute()/ "0.aedb"
 
 def boot(argv):
-    with open(path_file, 'r+') as outfile:
-        item = yaml.load(outfile, Loader=yaml.Loader)
-        if item["main_program"][0] == "python":
-            exec(item["main_program"][1])
+    """Boots the database from the file containing boot source.
+    argv is passed to the program implicitly"""
+    path_file = pathlib.Path(__file__).parent.absolute()/ "0.aedb"
+    with open(path_file, 'r+') as file:
+        exec(yaml.load(file, Loader=yaml.Loader)["program"][1])
