@@ -5,7 +5,7 @@ from . import texttools
 from . import boot
 #───────────────────────────────────────────────────────────────────────
 def generate_boot(path):
-    key = "program"
+    key = "executable"
     value_type = "python_source"
     value = boot.core_as_string
     item = {key: (value_type, value)}

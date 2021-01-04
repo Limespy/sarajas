@@ -1,13 +1,16 @@
-program: !!python/tuple
+executable: !!python/tuple
 - python_source
-- "intro = \"\"\"\n         AWAMMMMM  MMMMMMMMMMMM  MM       MM  MMMMMMM  MMMMRD\n\
-  \        AWMM            MM       MM       MM  MM       MM    RD\n       AW MM \
-  \           MM       MM       MM  MM       MM     RD\n      AW  MM            MM\
-  \       MM       MM  MM       MM    RD\n     AW   MMMMMMM       MM       MMMMMMMMMMM\
-  \  MMMMMMM  MMWMRD\n    AW    MM            MM       MM       MM  MM       MM WA\n\
-  \   AWMMMMMMM            MM       MM       MM  MM       MM  WA\n  AW      MM   \
-  \         MM       MM       MM  MM       MM   WA\n AW       MMMMMMM       MM   \
-  \    MM       MM  MMMMMMM  MM    WA\n\nHello there!\n\nThe database has been booted,\
-  \ but it is not really working.\n\nHere, have an interactive python loop instead!\n\
-  \"\"\"\n\nprint(intro)\nprompt = ash + \": \" # Stupid hack to get the character\n\
-  while True:\n    exec(input(prompt))\n\n"
+- "from termcolor import colored\n\nlogo = \"\"\"\n         AWAMMMMM  MMMMMMMMMMMM\
+  \  MM       MM  MMMMMMM  MMMMA\n        AWMM            MM       MM       MM  MM\
+  \       MM   RA\n       AW MM            MM       MM       MM  MM       MM    RD\n\
+  \      AW  MM            MM       MM       MM  MM       MM   RW\n     AW   MMMMMMM\
+  \       MM       MMMMMMMMMMM  MMMMMMM  MMWMW\n    AW    MM            MM       MM\
+  \       MM  MM       MM WA\n   AWMMMMMMM            MM       MM       MM  MM   \
+  \    MM  WA\n  AW      MM            MM       MM       MM  MM       MM   WA\n AW\
+  \       MMMMMMM       MM       MM       MM  MMMMMMM  MM    WA\"\"\"\nintro = \"\"\
+  \"\nHello there!\n\nThe database has been booted, but it is not really working.\n\
+  \nHere, have an interactive python loop instead!\n\"\"\"\nprint(colored(logo,\"\
+  white\"))\nprint(colored(intro))\n\ndef _interactive():\n    prompt = ash + \":\
+  \ \" # Stupid hack to get the character\n    while True:\n        print(prompt,\
+  \ end=\"\")\n        exec('\\n'.join(iter(input, \"\")))\n\ntry: \n    _interactive()\n\
+  except KeyboardInterrupt:\n    pass\n"
