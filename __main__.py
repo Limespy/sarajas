@@ -13,7 +13,7 @@ if "load" in sys.argv:
 
 if "boot" in sys.argv:
     import database
-    database.boot(sys.argv)
+    database.boot()
 
 if "print" in sys.argv:
     with open(meta.path_DB/"__main__.py", 'r+') as file:
