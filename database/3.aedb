@@ -1,0 +1,20 @@
+_item_name: !!python/tuple
+- text
+- '3'
+description: !!python/tuple
+- text
+- List of indexes
+index_table: !!python/tuple
+- _python_dict
+- _event_log: !!python/tuple
+  - _internal_reference
+  - '11'
+  executable: !!python/tuple
+  - _internal_reference
+  - '12'
+  index_table: !!python/tuple
+  - _internal_reference
+  - '2'
+  provider: !!python/tuple
+  - _internal_reference
+  - '13'

@@ -1,6 +1,9 @@
 _index_list: !!python/tuple
 - _internal_reference
 - '3'
+_item_name: !!python/tuple
+- text
+- '1'
 _item_writer: !!python/tuple
 - _internal_reference
 - '2'

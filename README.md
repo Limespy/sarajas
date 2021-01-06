@@ -41,6 +41,8 @@
 1. To get a database/API hybrid to allow management and connections between arbitrary systems.
 2. Learn metaprogramming with python
 
+This project will be a kind of sandbox for me.
+Here I wil set very loose limitations to myself on what is sensible and reasonable programming.
 ### Meditations
 
 Flexibility is paramount.
@@ -50,8 +52,6 @@ The system should be transparent.
 Complexity from simple rules.
 
 Let's see how far I can take this insanity.
-
-
 
 #### Interesting things to do
 

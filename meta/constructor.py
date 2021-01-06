@@ -6,7 +6,8 @@ from . import boot
 def generate_boot(path_to):
     description_text = """
     Boot item. Contains the executable for actually booting other database utilities."""
-    item = {"description":  ("text",            description_text),
+    item = {"_item_name":   ("text",            "0"),
+            "description":  ("text",            description_text),
             "executable":   ("python_source",   boot.core_as_string())}
     
     with open(path_to, 'w+') as file:
@@ -31,7 +32,8 @@ Hello there!
 The database has been booted, but it is not really working.
 
 Here, have an interactive python loop instead!"""
-    item = {"description":  ("text",            description_text),
+    item = {"_item_name":   ("text",            "1"),
+            "description":  ("text",            description_text),
             "logo":         ("textart",         logo),
             "intro":        ("text",            intro),
             "_item_writer": ("_internal_reference", "2"),

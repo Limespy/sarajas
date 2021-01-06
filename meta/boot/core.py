@@ -1,21 +1,24 @@
 class Item():
-    def __init__(self, name="0"):
-        self._coredict_ = _load_by_name(name=name)
-        self.__dict__ = self._coredict_
-        self._name_ = name
+    def __init__(self, name="0", item_dict=None, ):
+        if item_dict:
+            self.__dict__ = item_dict
+        else:
+            self.__dict__  = _load_by_name(name=name)
         if "_init_executable" in self.__dict__:
             exec(self._init_executable[1])
-    
+    def addkey(self,key="test", value="value"):
+        self.__dict__.update({key: value})
+
     def write(self):
-        with open(path_data/(self._name_ + ".aedb"), 'w+') as file:
-            yaml.dump(self._coredict_, file, default_flow_style=False)
+        with open(path_data/(self._item_name[1] + ".aedb"), 'w+') as file:
+            yaml.dump(self.__dict__, file, default_flow_style=False)
     
-    def execute(self):
+    def execute(self,**kwargs):
         exec(self.executable[1])
     
     def __str__(self):
-        string  = "Name:\t %s"% (self._name_)
-        for key, value in self._coredict_.items():
+        string  = ""
+        for key, value in self.__dict__.items():
             string += "\nKey: %s:" % (key)
             string += "\tType: %s" % (value[0])
             string += "\tValue: \n%s" % (str(value[1]))
@@ -33,8 +36,7 @@ def _generate_item(name, item_dict):
 
 _boot = Item(name="0")
 _config = Item(name="1")
-
-
+_metaindex = Item(name=_config._index_list[1])
 
 print(_config.logo[1])
 print(_config.intro[1])
