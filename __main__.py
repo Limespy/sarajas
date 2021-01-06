@@ -2,19 +2,21 @@
 # -*- coding: utf-8 -*-
 import sys
 import yaml
-import meta
+import API as AetherDB
 #───────────────────────────────────────────────────────────────────────
 if "generate" in sys.argv:
-    meta.contructor.generate_boot(meta.path_0)
+    AetherDB.meta.constructor.generate_boot(AetherDB.meta.path_0)
 
 if "load" in sys.argv:
-    with open(meta.path_0, 'r+') as file:
+    with open(AetherDB.meta.path_0, 'r+') as file:
         item = yaml.load(file, Loader=yaml.Loader)
 
 if "boot" in sys.argv:
-    import database
-    database.boot()
+    AetherDB.boot()
 
 if "print" in sys.argv:
-    with open(meta.path_DB/"__main__.py", 'r+') as file:
+    with open(AetherDB.meta.path_DB/"__main__.py", 'r+') as file:
         print(file.read())
+
+if "sandbox" in sys.argv:
+    import sandbox

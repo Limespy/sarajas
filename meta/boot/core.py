@@ -1,32 +1,34 @@
 from termcolor import colored
 
-logo = """
-         AWAMMMMM  MMMMMMMMMMMM  MM      MM  MMMMMMMM  MMMMMA
-        AWMM            MM       MM      MM  MM        MM    RA
-       AW MM            MM       MM      MM  MM        MM     RD
-      AW  MM            MM       MM      MM  MM        MM    RW
-     AW   MMMMMMM       MM       MMMMMMMMMM  MMMMMMMM  MMWMMW
-    AW    MM            MM       MM      MM  MM        MM WA
-   AWMMMMMMM            MM       MM      MM  MM        MM  WA
-  AW      MM            MM       MM      MM  MM        MM   WA
- AW       MMMMMMM       MM       MM      MM  MMMMMMMM  MM    WA"""
 intro = """
 Hello there!
 
 The database has been booted, but it is not really working.
 
-Here, have an interactive python loop instead!
-"""
-print(colored(logo,"white"))
+Here, have an interactive python loop instead!"""
+#───────────────────────────────────────────────────────────────────────
+class Item():
+    def __init__(self, name="0"):
+        self.__dict__ = _load_by_name(name=name)
+        self.__name__ = name
+    def execute(self):
+        exec(self.executable[1])
+    
+    def __str__(self):
+        string  = "Item name:\t %s" (self.__name__)
+        return string
+#───────────────────────────────────────────────────────────────────────
+def _regenerate_boot():
+    meta.constructor.generate_boot(meta.path_0)
+#───────────────────────────────────────────────────────────────────────
+item = Item()
+print(colored(item.logo[1],"white"))
 print(colored(intro))
-
-def _interactive():
-    prompt = ash + ": " # Stupid hack to get the character
+prompt = ash + ": " # Stupid hack to get the character
+#───────────────────────────────────────────────────────────────────────
+try:  # The infinite interactive loop. Exit with command exit()
     while True:
         print(prompt, end="")
         exec('\n'.join(iter(input, "")))
-
-try: 
-    _interactive()
 except KeyboardInterrupt:
     pass

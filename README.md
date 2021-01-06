@@ -16,6 +16,7 @@
       - [No preliminary limitations](#no-preliminary-limitations)
   - [Design](#design)
     - [Core functions](#core-functions)
+      - [Boot](#boot)
     - [Security](#security)
     - [Item files](#item-files)
       - [Data typing](#data-typing)
@@ -23,7 +24,7 @@
       - [Indexes](#indexes)
     - [Interactions](#interactions)
   - [Implementation](#implementation)
-    - [Boot](#boot)
+    - [Boot](#boot-1)
     - [Item storage](#item-storage)
       - [Data](#data)
       - [Types](#types)
@@ -102,7 +103,16 @@ The data can be fully stored in the database item or exist outside with database
 ### Core functions
 
 The system needs to be able to:
-1. Load files
+- Load items from files
+- References to other items
+- Recognise items as containing executables
+- Execute programs based items 
+- Write items to files
+
+
+#### Boot
+
+
 2. Boot to prepared boot file
 3. Take and execute text input
 4. Generate files
@@ -181,6 +191,12 @@ There are following implementation options:
 1. Start with module source and execute
 2. Start with module source containing only class and execute and initialise
 
+There will be a config file, whil will contain
+
+- Reference to the item containing the index of indexes
+- Reference to the item containing list references to log items
+- 
+
 ### Item storage
 
 File extension will be aedb.
@@ -230,4 +246,4 @@ python "database folder name"
 
 Version control provided by Git
 
-There shall be git wrapper through python 
+There shall be a Git wrapper through python 

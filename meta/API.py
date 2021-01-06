@@ -4,7 +4,7 @@
 import pathlib
 
 from . import boot
-from . import contructor
+from . import constructor
 from . import texttools
 
 path_meta = pathlib.Path(__file__).parent.absolute()
