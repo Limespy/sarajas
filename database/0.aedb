@@ -3,16 +3,21 @@ description: !!python/tuple
 - "\n    Boot item. Contains the executable for actually booting other database utilities."
 executable: !!python/tuple
 - python_source
-- "class Item():\n    def __init__(self, name=\"0\"):\n        self.__dict__ = _load_by_name(name=name)\n\
-  \        self.__name__ = name\n    def execute(self):\n        exec(self.executable[1])\n\
-  \    \n    def __str__(self):\n        string  = \"Name:\\t %s\"% (self.__name__)\n\
-  \        for key, value in self.__dict__.items():\n            if key != \"__name__\"\
-  :\n                string += \"\\nKey: %s:\" % (key)\n                string +=\
-  \ \"\\tType: %s\" % (value[0])\n                string += \"\\tValue: \\n%s\" %\
-  \ (str(value[1]))\n        return string\n\ndef _regenerate_boot(path = path_data\
-  \ / \"0.aedb\"):\n    meta.constructor.generate_boot(path)\n\ndef _regenerate_config(path\
-  \ = path_data / \"1.aedb\"):\n    meta.constructor.generate_config(path)\n\n_boot_item\
-  \ = Item(name=\"0\")\n_config_item = Item(name=\"1\")\n\nprint(_config_item.logo[1])\n\
-  print(_config_item.intro[1])\n\nprompt = ash + \": \" # Stupid hack to get the symbol\n\
-  \ntry:\n    while True:\n        print(prompt, end=\"\")\n        exec('\\n'.join(iter(input,\
-  \ \"\")))\nexcept KeyboardInterrupt:\n    pass\n"
+- "class Item():\n    def __init__(self, name=\"0\"):\n        self._coredict_ = _load_by_name(name=name)\n\
+  \        self.__dict__ = self._coredict_\n        self._name_ = name\n        if\
+  \ \"_init_executable\" in self.__dict__:\n            exec(self._init_executable[1])\n\
+  \    \n    def write(self):\n        with open(path_data/(self._name_ + \".aedb\"\
+  ), 'w+') as file:\n            yaml.dump(self._coredict_, file, default_flow_style=False)\n\
+  \    \n    def execute(self):\n        exec(self.executable[1])\n    \n    def __str__(self):\n\
+  \        string  = \"Name:\\t %s\"% (self._name_)\n        for key, value in self._coredict_.items():\n\
+  \            string += \"\\nKey: %s:\" % (key)\n            string += \"\\tType:\
+  \ %s\" % (value[0])\n            string += \"\\tValue: \\n%s\" % (str(value[1]))\n\
+  \        return string\n\ndef _regenerate_boot(path = path_data / \"0.aedb\"):\n\
+  \    meta.constructor.generate_boot(path)\n\ndef _regenerate_config(path = path_data\
+  \ / \"1.aedb\"):\n    meta.constructor.generate_config(path)\n\ndef _generate_item(name,\
+  \ item_dict):\n    with open(path_data/(name + \".aedb\"), 'w+') as file:\n    \
+  \    yaml.dump(item_dict, file, default_flow_style=False)\n\n_boot = Item(name=\"\
+  0\")\n_config = Item(name=\"1\")\n\n\n\nprint(_config.logo[1])\nprint(_config.intro[1])\n\
+  \nprompt = ash + \": \" # Stupid hack to get the symbol\n\ntry:\n    while True:\n\
+  \        print(prompt, end=\"\")\n        exec('\\n'.join(iter(input, \"\")))\n\
+  except KeyboardInterrupt:\n    pass\n"

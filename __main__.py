@@ -5,7 +5,8 @@ import yaml
 import API as AetherDB
 #───────────────────────────────────────────────────────────────────────
 if "generate" in sys.argv:
-    AetherDB.meta.constructor.generate_boot(AetherDB.meta.path_0)
+    AetherDB.meta.constructor.generate_boot(AetherDB.path_data / "0.aedb")
+    AetherDB.meta.constructor.generate_config(AetherDB.path_data / "1.aedb")
 
 if "load" in sys.argv:
     with open(AetherDB.meta.path_0, 'r+') as file:
