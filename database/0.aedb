@@ -3,81 +3,16 @@ description: !!python/tuple
 - "\n    Boot item. Contains the executable for actually booting other database utilities."
 executable: !!python/tuple
 - python_source
-- "from termcolor import colored\n\nintro = \"\"\"\nHello there!\n\nThe database has\
-  \ been booted, but it is not really working.\n\nHere, have an interactive python\
-  \ loop instead!\"\"\"\n#\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\nclass Item():\n    def __init__(self, name=\"\
-  0\"):\n        self.__dict__ = _load_by_name(name=name)\n        self.__name__ =\
-  \ name\n    def execute(self):\n        exec(self.executable[1])\n    \n    def\
-  \ __str__(self):\n        string  = \"Item name:\\t %s\" (self.__name__)\n     \
-  \   return string\n#\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\ndef _regenerate_boot():\n    meta.constructor.generate_boot(meta.path_0)\n\
-  #\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\
-  \xE2\u201D\u20AC\nitem = Item()\nprint(colored(item.logo[1],\"white\"))\nprint(colored(intro))\n\
-  prompt = ash + \": \" # Stupid hack to get the character\n#\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\
-  \u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\xE2\u201D\u20AC\ntry:  #\
-  \ The infinite interactive loop. Exit with command exit()\n    while True:\n   \
-  \     print(prompt, end=\"\")\n        exec('\\n'.join(iter(input, \"\")))\nexcept\
-  \ KeyboardInterrupt:\n    pass\n"
-logo: !!python/tuple
-- textart
-- "\n         AWAMMMMM  MMMMMMMMMMMM  MM      MM  MMMMMMMM  MMMMMA\n        AWMM \
-  \           MM       MM      MM  MM        MM    RA\n       AW MM            MM\
-  \       MM      MM  MM        MM     RD\n      AW  MM            MM       MM   \
-  \   MM  MM        MM    RW\n     AW   MMMMMMM       MM       MMMMMMMMMM  MMMMMMMM\
-  \  MMWMMW\n    AW    MM            MM       MM      MM  MM        MM WA\n   AWMMMMMMM\
-  \            MM       MM      MM  MM        MM  WA\n  AW      MM            MM \
-  \      MM      MM  MM        MM   WA\n AW       MMMMMMM       MM       MM      MM\
-  \  MMMMMMMM  MM    WA"
+- "class Item():\n    def __init__(self, name=\"0\"):\n        self.__dict__ = _load_by_name(name=name)\n\
+  \        self.__name__ = name\n    def execute(self):\n        exec(self.executable[1])\n\
+  \    \n    def __str__(self):\n        string  = \"Name:\\t %s\"% (self.__name__)\n\
+  \        for key, value in self.__dict__.items():\n            if key != \"__name__\"\
+  :\n                string += \"\\nKey: %s:\" % (key)\n                string +=\
+  \ \"\\tType: %s\" % (value[0])\n                string += \"\\tValue: \\n%s\" %\
+  \ (str(value[1]))\n        return string\n\ndef _regenerate_boot(path = path_data\
+  \ / \"0.aedb\"):\n    meta.constructor.generate_boot(path)\n\ndef _regenerate_config(path\
+  \ = path_data / \"1.aedb\"):\n    meta.constructor.generate_config(path)\n\n_boot_item\
+  \ = Item(name=\"0\")\n_config_item = Item(name=\"1\")\n\nprint(_config_item.logo[1])\n\
+  print(_config_item.intro[1])\n\nprompt = ash + \": \" # Stupid hack to get the symbol\n\
+  \ntry:\n    while True:\n        print(prompt, end=\"\")\n        exec('\\n'.join(iter(input,\
+  \ \"\")))\nexcept KeyboardInterrupt:\n    pass\n"

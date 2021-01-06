@@ -1,12 +1,3 @@
-from termcolor import colored
-
-intro = """
-Hello there!
-
-The database has been booted, but it is not really working.
-
-Here, have an interactive python loop instead!"""
-#───────────────────────────────────────────────────────────────────────
 class Item():
     def __init__(self, name="0"):
         self.__dict__ = _load_by_name(name=name)
@@ -15,18 +6,29 @@ class Item():
         exec(self.executable[1])
     
     def __str__(self):
-        string  = "Item name:\t %s" (self.__name__)
+        string  = "Name:\t %s"% (self.__name__)
+        for key, value in self.__dict__.items():
+            if key != "__name__":
+                string += "\nKey: %s:" % (key)
+                string += "\tType: %s" % (value[0])
+                string += "\tValue: \n%s" % (str(value[1]))
         return string
-#───────────────────────────────────────────────────────────────────────
-def _regenerate_boot():
-    meta.constructor.generate_boot(meta.path_0)
-#───────────────────────────────────────────────────────────────────────
-item = Item()
-print(colored(item.logo[1],"white"))
-print(colored(intro))
-prompt = ash + ": " # Stupid hack to get the character
-#───────────────────────────────────────────────────────────────────────
-try:  # The infinite interactive loop. Exit with command exit()
+
+def _regenerate_boot(path = path_data / "0.aedb"):
+    meta.constructor.generate_boot(path)
+
+def _regenerate_config(path = path_data / "1.aedb"):
+    meta.constructor.generate_config(path)
+
+_boot_item = Item(name="0")
+_config_item = Item(name="1")
+
+print(_config_item.logo[1])
+print(_config_item.intro[1])
+
+prompt = ash + ": " # Stupid hack to get the symbol
+
+try:
     while True:
         print(prompt, end="")
         exec('\n'.join(iter(input, "")))
