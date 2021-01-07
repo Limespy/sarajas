@@ -1,5 +1,15 @@
 # Æther database
 
+## Meta
+
+This section focuses on the document itself rather than th
+### Instructions to the reader
+
+- Fundamentals covers 
+- Design goes into
+
+### TOC
+
 - [Æther database](#æther-database)
   - [Fundamentals](#fundamentals)
     - [Aim](#aim)
@@ -32,7 +42,7 @@
     - [Booting](#booting)
     - [Version control](#version-control-2)
 
-## Meta
+
 
 ## Fundamentals
 

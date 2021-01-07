@@ -1,0 +1,14 @@
+__id__: !!python/tuple
+- _python_str
+- '2'
+_title: !!python/tuple
+- _python_str
+- 'Types'
+_description: !!python/tuple
+- _python_str
+- A core item for managing the types. Contains references to type items
+_readers: !!python/tuple
+- _python_dict
+- _internal_item: !!python/tuple
+  - _internal_item
+  - '21'

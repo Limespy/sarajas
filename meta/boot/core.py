@@ -1,27 +1,40 @@
+class Datum():
+    def __init__(self, datum):
+        self._type = datum[0]
+        self.value = datum[1]
+    def __str__(self):
+        return str(self.value)
 class Item():
-    def __init__(self, name="0", item_dict=None, ):
+    def __init__(self, ID="0", item_dict=None):
         if item_dict:
-            self.__dict__ = item_dict
+            self._unpack(item_dict)
         else:
-            self.__dict__  = _load_by_name(name=name)
+            self._unpack(_load_by_name(ID=str(ID)))
         if "_init_executable" in self.__dict__:
             exec(self._init_executable[1])
-    def addkey(self,key="test", value="value"):
-        self.__dict__.update({key: value})
+    
+    def _unpack(self, item_dict):
+        self.__dict__ = {key: Datum(datum_tuple) for key, datum_tuple in item_dict.items()}
+    
+    def add_key(self,key="test", dtype="_python_str", value="value"):
+        self.__dict__.update({key: Datum((dtype, value))})
 
     def write(self):
-        with open(path_data/(self._item_name[1] + ".aedb"), 'w+') as file:
-            yaml.dump(self.__dict__, file, default_flow_style=False)
+        """Packs and writes the item back"""
+        packed_dict = {key: (d._type, d.value) for key, d in self.__dict__.items()}
+        path = path_data/(str(self.__ID__) + "." + file_extension)
+        with open(path, 'w+') as file:
+            yaml.dump(packed_dict, file, default_flow_style=False)
     
     def execute(self,**kwargs):
         exec(self.executable[1])
     
     def __str__(self):
         string  = ""
-        for key, value in self.__dict__.items():
+        for key, datum in self.__dict__.items():
             string += "\nKey: %s:" % (key)
-            string += "\tType: %s" % (value[0])
-            string += "\tValue: \n%s" % (str(value[1]))
+            string += "\tType: %s" % (datum._type)
+            string += "\tValue: \n%s" % (str(datum))
         return string
 
 def _regenerate_boot(path = path_data / "0.aedb"):
@@ -30,20 +43,16 @@ def _regenerate_boot(path = path_data / "0.aedb"):
 def _regenerate_config(path = path_data / "1.aedb"):
     meta.constructor.generate_config(path)
 
-def _generate_item(name, item_dict):
-    with open(path_data/(name + ".aedb"), 'w+') as file:
-        yaml.dump(item_dict, file, default_flow_style=False)
+_boot = Item(ID="0")
+_config = Item(ID="1")
+_types = Item(ID=_config._types.value)
+_metaindex = Item(ID=_config._metaindex.value)
 
-_boot = Item(name="0")
-_config = Item(name="1")
-_metaindex = Item(name=_config._index_list[1])
-
-print(_config.logo[1])
-print(_config.intro[1])
-
-prompt = ash + ": " # Stupid hack to get the symbol
+print(_config.logo)
+print(_config.intro)
 
 try:
+    prompt = ash + ": " # Stupid hack to get the symbol
     while True:
         print(prompt, end="")
         exec('\n'.join(iter(input, "")))

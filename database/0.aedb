@@ -1,28 +1,35 @@
-_item_name: !!python/tuple
-- text
+__id__: !!python/tuple
+- _python_str
 - '0'
-description: !!python/tuple
-- text
+_title: !!python/tuple
+- _python_str
+- 'Boot'
+_description: !!python/tuple
+- _python_str
 - "\n    Boot item. Contains the executable for actually booting other database utilities."
 executable: !!python/tuple
-- python_source
-- "class Item():\n    def __init__(self, name=\"0\", item_dict=None, ):\n        if\
-  \ item_dict:\n            self.__dict__ = item_dict\n        else:\n           \
-  \ self.__dict__  = _load_by_name(name=name)\n        if \"_init_executable\" in\
-  \ self.__dict__:\n            exec(self._init_executable[1])\n    def addkey(self,key=\"\
-  test\", value=\"value\"):\n        self.__dict__.update({key: value})\n\n    def\
-  \ write(self):\n        with open(path_data/(self._item_name[1] + \".aedb\"), 'w+')\
-  \ as file:\n            yaml.dump(self.__dict__, file, default_flow_style=False)\n\
-  \    \n    def execute(self,**kwargs):\n        exec(self.executable[1])\n    \n\
-  \    def __str__(self):\n        string  = \"\"\n        for key, value in self.__dict__.items():\n\
-  \            string += \"\\nKey: %s:\" % (key)\n            string += \"\\tType:\
-  \ %s\" % (value[0])\n            string += \"\\tValue: \\n%s\" % (str(value[1]))\n\
-  \        return string\n\ndef _regenerate_boot(path = path_data / \"0.aedb\"):\n\
-  \    meta.constructor.generate_boot(path)\n\ndef _regenerate_config(path = path_data\
-  \ / \"1.aedb\"):\n    meta.constructor.generate_config(path)\n\ndef _generate_item(name,\
-  \ item_dict):\n    with open(path_data/(name + \".aedb\"), 'w+') as file:\n    \
-  \    yaml.dump(item_dict, file, default_flow_style=False)\n\n_boot = Item(name=\"\
-  0\")\n_config = Item(name=\"1\")\n_metaindex = Item(name=_config._index_list[1])\n\
-  \nprint(_config.logo[1])\nprint(_config.intro[1])\n\nprompt = ash + \": \" # Stupid\
-  \ hack to get the symbol\n\ntry:\n    while True:\n        print(prompt, end=\"\"\
-  )\n        exec('\\n'.join(iter(input, \"\")))\nexcept KeyboardInterrupt:\n    pass\n"
+- _python_source
+- "class Datum():\n    def __init__(self, datum):\n        self._type = datum[0]\n\
+  \        self.value = datum[1]\n    def __str__(self):\n        return str(self.value)\n\
+  class Item():\n    def __init__(self, ID=\"0\", item_dict=None):\n        if item_dict:\n\
+  \            self._unpack(item_dict)\n        else:\n            self._unpack(_load_by_name(ID=str(ID)))\n\
+  \        if \"_init_executable\" in self.__dict__:\n            exec(self._init_executable[1])\n\
+  \    \n    def _unpack(self, item_dict):\n        self.__dict__ = {key: Datum(datum_tuple)\
+  \ for key, datum_tuple in item_dict.items()}\n    \n    def add_key(self,key=\"\
+  test\", dtype=\"_python_str\", value=\"value\"):\n        self.__dict__.update({key:\
+  \ Datum((dtype, value))})\n\n    def write(self):\n        \"\"\"Packs and writes\
+  \ the item back\"\"\"\n        packed_dict = {key: (d._type, d.value) for key, d\
+  \ in self.__dict__.items()}\n        path = path_data/(str(self.__ID__) + \".\"\
+  \ + file_extension)\n        with open(path, 'w+') as file:\n            yaml.dump(packed_dict,\
+  \ file, default_flow_style=False)\n    \n    def execute(self,**kwargs):\n     \
+  \   exec(self.executable[1])\n    \n    def __str__(self):\n        string  = \"\
+  \"\n        for key, datum in self.__dict__.items():\n            string += \"\\\
+  nKey: %s:\" % (key)\n            string += \"\\tType: %s\" % (datum._type)\n   \
+  \         string += \"\\tValue: \\n%s\" % (str(datum))\n        return string\n\n\
+  def _regenerate_boot(path = path_data / \"0.aedb\"):\n    meta.constructor.generate_boot(path)\n\
+  \ndef _regenerate_config(path = path_data / \"1.aedb\"):\n    meta.constructor.generate_config(path)\n\
+  \n_boot = Item(ID=\"0\")\n_config = Item(ID=\"1\")\n_types = Item(ID=_config._types.value)\n\
+  _metaindex = Item(ID=_config._metaindex.value)\n\nprint(_config.logo)\nprint(_config.intro)\n\
+  \ntry:\n    prompt = ash + \": \" # Stupid hack to get the symbol\n    while True:\n\
+  \        print(prompt, end=\"\")\n        exec('\\n'.join(iter(input, \"\")))\n\
+  except KeyboardInterrupt:\n    pass\n"

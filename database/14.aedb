@@ -1,9 +1,12 @@
-__id__: !!python/tuple
+_item_name: !!python/tuple
 - text
-- '3'
+- '14'
+_title: !!python/tuple
+- _python_str
+- 'Index of indexes'
 _description: !!python/tuple
 - text
-- List of indexes
+- 'List of indexes contained in the index-table'
 index_table: !!python/tuple
 - _python_dict
 - _event_log: !!python/tuple

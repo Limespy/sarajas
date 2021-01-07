@@ -1,12 +1,9 @@
-__id__: !!python/tuple
+__ID__: !!python/tuple
 - _python_str
-- '1'
-_title: !!python/tuple
-- _python_str
-- 'Core config'
+- '4'
 _description: !!python/tuple
 - _python_str
-- 'Config item.'
+- utilities.
 _metaindex: !!python/tuple
 - _internal_item
 - '3'

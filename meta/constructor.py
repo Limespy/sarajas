@@ -6,9 +6,9 @@ from . import boot
 def generate_boot(path_to):
     description_text = """
     Boot item. Contains the executable for actually booting other database utilities."""
-    item = {"_item_name":   ("text",            "0"),
-            "description":  ("text",            description_text),
-            "executable":   ("python_source",   boot.core_as_string())}
+    item = {"__id__":       ("_python_str",     "0"),
+            "_description": ("_python_str",            description_text),
+            "executable":   ("_python_source",   boot.core_as_string())}
     
     with open(path_to, 'w+') as file:
         yaml.dump(item, file, default_flow_style=False)
@@ -32,20 +32,14 @@ Hello there!
 The database has been booted, but it is not really working.
 
 Here, have an interactive python loop instead!"""
-    item = {"_item_name":   ("text",            "1"),
-            "description":  ("text",            description_text),
-            "logo":         ("textart",         logo),
-            "intro":        ("text",            intro),
-            "_item_writer": ("_internal_reference", "2"),
-            "_index_list": ("_internal_reference", "3")}
+
+    item = {"__id__":       ("_python_str",     "1"),
+            "_description": ("_python_str",            description_text),
+            "logo":         ("_textart",         logo),
+            "intro":        ("_python_str",            intro),
+            "_types":       ("_internal_item",  "2"),
+            "_metaindex":   ("_internal_item",  "3"),
+            "_utilities":   ("_internal_item",  "4")}
     with open(path_to, 'w+') as file:
         yaml.dump(item, file, default_flow_style=False)
-#───────────────────────────────────────────────────────────────────────
-# def generate_item_writer(path_to):
-#     description_text = """Writes items to given name"""
-#     source = """"""
-#     item = {"description":  ("text",            description_text),
-#             "_init_executable":   ("python_source",   source)}
-#     with open(path_to, 'w+') as file:
-#         yaml.dump(item, file, default_flow_style=False)
 #───────────────────────────────────────────────────────────────────────
