@@ -1,2 +1,2 @@
-limedev >= 0.4.0
+limedev >= 0.3.0
 pyyaml >= 6.0.1

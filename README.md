@@ -5,7 +5,7 @@
 This section focuses on the document itself rather than th
 ### Instructions to the reader
 
-- Fundamentals covers 
+- Fundamentals covers
 - Design goes into
 
 ### TOC
@@ -98,8 +98,8 @@ Complexity will not be created from complex ruleset, but through interactions of
 #### Everything is item
 
 All things are items in the database, including the source code.
-This means the source code allows modification of itself. 
-Please be careful. 
+This means the source code allows modification of itself.
+Please be careful.
 
 #### No preliminary limitations
 
@@ -108,7 +108,7 @@ If in doubt, take the more generalized approach.
 ## Design
 
 The database should be considered an indexing system for arbitrary number of multiple different systems.
-The data can be fully stored in the database item or exist outside with database item functioning as metadata, linking and API layer to the actual data. 
+The data can be fully stored in the database item or exist outside with database item functioning as metadata, linking and API layer to the actual data.
 
 ### Core functions
 
@@ -116,7 +116,7 @@ The system needs to be able to:
 - Load items from files
 - References to other items
 - Recognise items as containing executables
-- Execute programs based items 
+- Execute programs based items
 - Write items to files
 
 
@@ -161,7 +161,7 @@ Index contains additionally
 - Reference to sorting condition
 - Descrition
 
-| item id | value type | value | 
+| item id | value type | value |
 
 
 Whenever item is added or removed from the database, it goes through the indexing conditions, which decide to which index tables to add it.
@@ -173,11 +173,11 @@ There are two things:
 2. Actions
 
 Actions change items.
-Taking inspiration from OOD of Python, actions are responsible for the sematics and items are responsible for the implementation. 
+Taking inspiration from OOD of Python, actions are responsible for the sematics and items are responsible for the implementation.
 I.e. the action does not need to know the type of the item being acted upon.
 Item will give some response.
 
-E.g. 
+E.g.
 1. Action is to execute a referenced item with a given arguments
 2. The item is loaded
 3. Item's executable type is read
@@ -205,7 +205,7 @@ There will be a config file, whil will contain
 
 - Reference to the item containing the index of indexes
 - Reference to the item containing list references to log items
-- 
+-
 
 ### Item storage
 
@@ -256,4 +256,4 @@ python "database folder name"
 
 Version control provided by Git
 
-There shall be a Git wrapper through python 
+There shall be a Git wrapper through python
