@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
 """
          AWAMMMMM  MMMMMMMMMMMM  MM      MM  MMMMMMMM  MMMMMA
         AWMM            MM       MM      MM  MM        MM    RA
@@ -10,5 +8,5 @@
    AWMMMMMMM            MM       MM      MM  MM        MM  WA
   AW      MM            MM       MM      MM  MM        MM   WA
  AW       MMMMMMM       MM       MM      MM  MMMMMMMM  MM    WA"""
-from .API import *
+from ._API import *
     
