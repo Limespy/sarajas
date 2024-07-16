@@ -1,2 +1,2 @@
-limedev[test,readme,package] >= 0.3.0
+limedev[test,readme,package] >= 0.4.1
 tox >= 4.5.1

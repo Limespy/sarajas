@@ -8,4 +8,5 @@
    AWMMMMMMM            MM       MM      MM  MM        MM  WA
   AW      MM            MM       MM      MM  MM        MM   WA
  AW       MMMMMMM       MM       MM      MM  MMMMMMMM  MM    WA"""
+__version__ = '0.0.2'
 from ._API import *

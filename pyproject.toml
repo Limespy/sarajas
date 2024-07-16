@@ -20,7 +20,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 authors = [
-    { name = "Limespy" },
+    { name = "AetherDB" },
 ]
 requires-python = ">=3.10"
 readme = "README.md"
