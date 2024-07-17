@@ -38,6 +38,7 @@ def boot(bootitem: str = '0'):
 
 
 def generate() -> int:
+    """Generates boot and configuration."""
     meta.constructor.generate_boot(PATH_DATA / '0.aedb')
     meta.constructor.generate_config(PATH_DATA / '1.aedb')
     return 0
