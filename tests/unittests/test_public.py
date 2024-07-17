@@ -1,2 +1,1 @@
-def test_importing():
-    import aetherdb
+import sarajas
