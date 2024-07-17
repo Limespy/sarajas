@@ -4,9 +4,9 @@
        AW MM            MM       MM      MM  MM        MM     RD
       AW  MM            MM       MM      MM  MM        MM    RW
      AW   MMMMMMM       MM       MMMMMMMMMM  MMMMMMMM  MMWMMW
-    AW    MM            MM       MM      MM  MM        MM WA
-   AWMMMMMMM            MM       MM      MM  MM        MM  WA
+    AWMMMMMM            MM       MM      MM  MM        MM WA
+   AW     MM            MM       MM      MM  MM        MM  WA
   AW      MM            MM       MM      MM  MM        MM   WA
  AW       MMMMMMM       MM       MM      MM  MMMMMMMM  MM    WA"""
-__version__ = '0.0.2'
+__version__ = '0.0.4'
 from ._API import *

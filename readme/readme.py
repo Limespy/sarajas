@@ -1,16 +1,15 @@
-import limedev
+import aetherdb
 from limedev import readme
-from limedev.readme import md
 #=======================================================================
-NAME = 'LimeDev'
-#=======================================================================
-def main(project_info):
+def main(pyproject: readme.PyprojectType):
     """This gets called by the limedev."""
-
-    semi_description = md.Document([
-        f'{NAME} is collection tools for Python development.\n'
-        'These tools are more or less thin wrappers around other packages.'
-    ])
-    return readme.make(limedev, semi_description,
-                       name = NAME)
+    name = pyproject['tool']['limedev']['full_name']
+    semi_description = f'''
+        {name} is a graph database program to allow mixed file type data
+        in a database.
+        Far from ready to be used.'''
+    return readme.make(aetherdb,
+                       semi_description,
+                       name = name,
+                       abbreviation = 'ae')
 #=======================================================================

@@ -18,9 +18,10 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
 authors = [
-    { name = "AetherDB" },
+    { name = "Limespy" },
 ]
 requires-python = ">=3.10"
 readme = "README.md"
@@ -37,6 +38,9 @@ aetherdb = "aetherdb:main"
 Homepage = "https://github.com/Limespy/AetherDB"
 Changelog = "https://github.com/Limespy/AetherDB/blob/main/README.md#Changelog"
 "Issue Tracker" = "https://github.com/Limespy/AetherDB/issues"
+
+[tool.limedev]
+full_name = "AetherDB"
 
 [tool.setuptools.dynamic.dependencies]
 file = [
