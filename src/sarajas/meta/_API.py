@@ -3,6 +3,7 @@
 import pathlib
 
 import yaml
+from limedev.CLI import get_main
 
 from . import boot
 from . import constructor
@@ -25,3 +26,5 @@ def load() -> int:
 def write():
     with open(path_DB/'__main__.py', 'r+') as file:
         print(file.read())
+
+main = get_main(__name__)

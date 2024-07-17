@@ -5,7 +5,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "aetherdb"
+name = "sarajas"
 description = "Toolkit for Python development, especially packaging "
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
@@ -25,22 +25,22 @@ authors = [
 ]
 requires-python = ">=3.10"
 readme = "README.md"
-version = "0.0.2"
+version = "0.0.4"
 dynamic = [
     "dependencies",
     "optional-dependencies",
 ]
 
 [project.scripts]
-aetherdb = "aetherdb:main"
+sarajas = "sarajas:main"
 
 [project.urls]
-Homepage = "https://github.com/Limespy/AetherDB"
-Changelog = "https://github.com/Limespy/AetherDB/blob/main/README.md#Changelog"
-"Issue Tracker" = "https://github.com/Limespy/AetherDB/issues"
+Homepage = "https://github.com/Limespy/sarajas"
+Changelog = "https://github.com/Limespy/sarajas/blob/main/README.md#Changelog"
+"Issue Tracker" = "https://github.com/Limespy/sarajas/issues"
 
 [tool.limedev]
-full_name = "AetherDB"
+full_name = "Sarajas"
 
 [tool.setuptools.dynamic.dependencies]
 file = [
@@ -54,4 +54,6 @@ file = "dependencies/requirements_dev.txt"
 file = "dependencies/requirements_build.txt"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = [
+    "src",
+]

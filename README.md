@@ -1,11 +1,11 @@
-[![PyPI Package latest release](https://img.shields.io/pypi/v/aetherdb.svg)][1]
-[![PyPI Wheel](https://img.shields.io/pypi/wheel/aetherdb.svg)][1]
-[![Supported versions](https://img.shields.io/pypi/pyversions/aetherdb.svg)][1]
-[![Supported implementations](https://img.shields.io/pypi/implementation/aetherdb.svg)][1]
+[![PyPI Package latest release](https://img.shields.io/pypi/v/sarajas.svg)][1]
+[![PyPI Wheel](https://img.shields.io/pypi/wheel/sarajas.svg)][1]
+[![Supported versions](https://img.shields.io/pypi/pyversions/sarajas.svg)][1]
+[![Supported implementations](https://img.shields.io/pypi/implementation/sarajas.svg)][1]
 
-# AetherDB <!-- omit in toc -->
+# Sarajas <!-- omit in toc -->
 
-AetherDB a graph database program to allow mixed file type data in a database. Far from ready to be used.
+Sarajas is a graph database program to allow mixed file type data in a database. Far from ready to be used.
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -22,24 +22,24 @@ Here's how you can start
 
 ### Installing
 
-Install AetherDB with pip
+Install Sarajas with pip
 
 ```
-pip install aetherdb
+pip install sarajas
 ```
 
 ### Importing
 
-Import name is the same as install name, `aetherdb`.
+Import name is the same as install name, `sarajas`.
 
 ```python
-import aetherdb
+import sarajas
 ```
 
-Since the package is accessed often,  abbreviation `ae` is used. The abbreviation is used throughout this document.
+Since the package is accessed often,  abbreviation `sr` is used. The abbreviation is used throughout this document.
 
 ```python
-import aetherdb as ae
+import sarajas as sr
 ```
 
 # Changelog <!-- omit in toc -->
@@ -48,4 +48,4 @@ import aetherdb as ae
 
 - Initial publishing
 
-[1]: <https://pypi.org/project/aetherdb> "Project PyPI page"
+[1]: <https://pypi.org/project/sarajas> "Project PyPI page"

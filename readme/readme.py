@@ -1,4 +1,4 @@
-import aetherdb
+import sarajas
 from limedev import readme
 #=======================================================================
 def main(pyproject: readme.PyprojectType):
@@ -8,8 +8,8 @@ def main(pyproject: readme.PyprojectType):
         {name} is a graph database program to allow mixed file type data
         in a database.
         Far from ready to be used.'''
-    return readme.make(aetherdb,
+    return readme.make(sarajas,
                        semi_description,
                        name = name,
-                       abbreviation = 'ae')
+                       abbreviation = 'sr')
 #=======================================================================
