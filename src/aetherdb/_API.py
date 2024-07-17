@@ -9,6 +9,16 @@ ASH = 'Æ'
 file_extension = 'aedb'
 PATH_BASE = pathlib.Path(__file__).parent.absolute()
 PATH_DATA = PATH_BASE/ 'database'
+ASCII_TITLE = """
+      AWAMMMMM  MMMMMMMMMMMM  MM      MM  MMMMMMMM  MMMMA    MMMMA     MMMMMA
+     AWMM            MM       MM      MM  MM        MM   RA  MM   MA   MM   MA
+    AW MM            MM       MM      MM  MM        MM   RW  MM    MA  MM   MW
+   AW  MMMMMMM       MM       MMMMMMMMMM  MMMMMMMM  MMWMW    MM    MM  MMMMMX
+  AWMMMMM            MM       MM      MM  MM        MM WA    MM    MW  MM   MA
+ AW    MM            MM       MM      MM  MM        MM  WA   MM   MM   MM   MW
+AW     MMMMMMM       MM       MM      MM  MMMMMMMM  MM   WA  MMMMV     MMMMMV
+"""
+
 # ======================================================================
 
 def _load_by_name(ID: str):
