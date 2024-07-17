@@ -6,6 +6,8 @@ on:
       - release-candidate
 
 jobs:
+  tests:
+    uses: ./.github/workflows/tests.yaml
   build_and_publish:
     runs-on: ubuntu-latest
     permissions:
